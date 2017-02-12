@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>Refactored</title>
+
+	<script type="text/javascript" src="src/do-not-refactor/LawnmowerRepository.js"></script>
+	<script type="text/javascript" src="src/do-not-refactor/PhoneCaseRepository.js"></script>
+	<script type="text/javascript" src="src/do-not-refactor/TShirtRepository.js"></script>
+
+	<script type="text/javascript" src="src/refactor-me/ProductDataConsolidator.js"></script>
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+	<script type="text/javascript" src="src/app.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+</head>
+<body>
+	<div ng-app="app" ng-controller="main" ng-cloak style="max-width: 600px">
+		<div ng-repeat="(id, currency) in { nzdProducts: 'NZD', usdProducts: 'USD', euProducts: 'Euro' }">
+			<div id="{{id}}">
+				<product-table currency="{{currency}}" products="products[currency]"/>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
