@@ -10,7 +10,7 @@
 	<tbody>
 		<tr ng-repeat="product in products">
 			<td>{{product.name}}</td>
-			<td>{{product.price}}</td>
+			<td>{{product.price | currency}}</td>
 			<td>{{product.type}}</td>
 		</tr>
 	</tbody>
