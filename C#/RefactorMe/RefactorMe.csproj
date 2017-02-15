@@ -39,7 +39,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Currencies.cs" />
     <Compile Include="ProductDataConsolidator.cs" />
+    <Compile Include="ProductExtensions.cs" />
     <Compile Include="ProductHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

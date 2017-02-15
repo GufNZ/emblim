@@ -57,6 +57,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="ProductDataConsolidatorTests.cs" />
+    <Compile Include="ProductExtensionsTests.cs" />
     <Compile Include="ProductHelperTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

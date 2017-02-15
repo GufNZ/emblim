@@ -22,6 +22,12 @@ namespace RefactorMe
 		);
 
 
+		public static List<Product> Get()		// To match the existing API.
+		{
+			return Instance.Value.GetAll().ToList();
+		}
+
+
 		private readonly IReadOnlyRepository<Lawnmower> lawnmowerRepository;
 		private readonly IReadOnlyRepository<PhoneCase> phoneCaseRepository;
 		private readonly IReadOnlyRepository<TShirt> teeShirtRepository;
@@ -55,36 +61,6 @@ namespace RefactorMe
 		{
 			return GetAll()
 				.Where(predicate);
-		}
-
-
-		public static List<Product> Get()
-		{
-			return Instance.Value.GetAll().ToList();
-		}
-
-		public static List<Product> GetInUSDollars()
-		{
-			return GetProductsWithModifiedPrice(0.76);
-		}
-
-		public static List<Product> GetInEuros()
-		{
-			return GetProductsWithModifiedPrice(0.67);
-		}
-
-
-		private static List<Product> GetProductsWithModifiedPrice(double priceRatio)		//FIXME: Prices REALLY should have been Decimal not Double...
-		{
-			return Get()
-				.Select(
-					product =>
-					{
-						product.Price *= priceRatio;
-						return product;
-					}
-				)
-				.ToList();
 		}
 	}
 }
